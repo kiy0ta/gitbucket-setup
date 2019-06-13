@@ -1,2 +1,12 @@
 ### Gitbucket のセットアップ
+version: '2'
+
+service:
+  gitbucket:
+    image: gitbucket/gitbucket
+    volumes_from:
+      - data-gitbucket
+    ports:
+      - "29418:29418"
+    command: java -jar /opt/gitbucket.war --prefix=/gitbucket
 
